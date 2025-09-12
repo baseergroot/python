@@ -7,6 +7,7 @@ higher_range = int(input("Enter the higher range: "))
 
 if lower_range > higher_range:
     print("Incorrect range: lower_range can not be greater that higher_range")
+    
 else:
     comp_number = randint(lower_range, higher_range)
 
