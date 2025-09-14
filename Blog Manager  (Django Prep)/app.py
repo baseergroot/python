@@ -79,7 +79,19 @@ def create_post():
 
     posts = cursor.execute("SELECT * FROM posts WHERE author_id = ?", (current_user["id"],)).fetchall()
 
-    print("Post created successfully", posts)
+    print("Post created successfully")
+
+def  list_posts():
+    global current_user
+    posts = cursor.execute("SELECT * FROM posts WHERE author_id = ?", (current_user["id"],)).fetchall()
+    # print(posts)
+    print()
+    for post in posts:
+        print(f"Post Number: {post[0]}")
+        print(f"Title: {post[1]}")
+        print(f"Content: {post[2]}")
+        print(f"Created at: {post[4]}")
+        print()
 
 
 while True:
